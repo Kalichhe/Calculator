@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../index.css";
+import Button from 'react-bootstrap/Button';
+import "../style/Keys.css";
 
 function Keys() {
   const [displayText, setDisplayText] = useState("0");
@@ -41,70 +42,70 @@ function Keys() {
   };
 
   return (
-    <div className="calculator">
+    <div className="calculator" >
       <div className="screen"> {displayText} </div>
-      <button id="c" className="btn" onClick={() => handleButtonClick("C")}>
+      <Button id="c" variant="outline-danger" onClick={() => handleButtonClick("C")}>
         C
-      </button>
-      <button
+      </Button>
+      <Button
         id="borrar"
-        className="btn"
+        variant="outline-warning"
         onClick={() => handleButtonClick("←")}
       >
         ←
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("%")}>
+      </Button>
+      <Button variant="outline-light" onClick={() => handleButtonClick("%")}>
         %
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("/")}>
+      </Button>
+      <Button variant="outline-success" onClick={() => handleButtonClick("/")}>
         /
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("7")}>
+      </Button>
+      <Button variant="outline-primary" onClick={() => handleButtonClick("7")}>
         7
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("8")}>
+      </Button>
+      <Button variant="outline-primary" onClick={() => handleButtonClick("8")}>
         8
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("9")}>
+      </Button>
+      <Button variant="outline-primary" onClick={() => handleButtonClick("9")}>
         9
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("*")}>
+      </Button>
+      <Button variant="outline-info" onClick={() => handleButtonClick("*")}>
         *
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("4")}>
+      </Button>
+      <Button variant="outline-primary" onClick={() => handleButtonClick("4")}>
         4
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("5")}>
+      </Button>
+      <Button variant="outline-primary" onClick={() => handleButtonClick("5")}>
         5
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("6")}>
+      </Button>
+      <Button variant="outline-primary" onClick={() => handleButtonClick("6")}>
         6
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("-")}>
+      </Button>
+      <Button variant="outline-light" onClick={() => handleButtonClick("-")}>
         -
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("1")}>
+      </Button>
+      <Button variant="outline-primary" onClick={() => handleButtonClick("1")}>
         1
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("2")}>
+      </Button>
+      <Button variant="outline-primary" onClick={() => handleButtonClick("2")}>
         2
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("3")}>
+      </Button>
+      <Button variant="outline-primary" onClick={() => handleButtonClick("3")}>
         3
-      </button>
-      <button className="btn" onClick={() => handleButtonClick("+")}>
+      </Button>
+      <Button variant="outline-warning" onClick={() => handleButtonClick("+")}>
         +
-      </button>
-      <button id="zero" className="btn" onClick={() => handleButtonClick("0")}>
+      </Button>
+      <Button id="zero" variant="outline-light" onClick={() => handleButtonClick("0")}>
         0
-      </button>
-      <button className="btn" onClick={() => handleButtonClick(".")}>
+      </Button>
+      <Button variant="outline-primary" onClick={() => handleButtonClick(".")}>
         .
-      </button>
-      <button id="equal" className="btn" onClick={() => handleButtonClick("=")}>
+      </Button>
+      <Button id="equal" variant="outline-danger" onClick={() => handleButtonClick("=")}>
         {" "}
         ={" "}
-      </button>
+      </Button>
     </div>
   );
 }

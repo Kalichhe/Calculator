@@ -2,6 +2,9 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import Form from "react-bootstrap/Form";
+
+import "../style/Login.css";
 
 function LoginPage() {
   const {
@@ -23,26 +26,32 @@ function LoginPage() {
   }, [isAuthenticated]);
 
   return (
-    <div>
+    <div className="login">
       {loginErrors.map((error, i) => (
         <div key={i}>{error}</div>
       ))}
-      <h1>Login</h1>
-      <form onSubmit={onSubmit}>
-        <input
-          type="email"
-          {...register("email", { required: true })}
-          placeholder="Email"
-        />
+      <h1 className="h1Login">Login</h1>
+      <Form onSubmit={onSubmit} className="form">
+        <Form.Group className="mb-3" controlId="formsBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            type="email"
+            {...register("email", { required: true })}
+            placeholder="Enter email"
+          />
+        </Form.Group>
         {errors.email && <p>Email is required</p>}
-        <input
-          type="password"
-          {...register("password", { required: true })}
-          placeholder="Password"
-        />
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            {...register("password", { required: true })}
+            placeholder="Password"
+          />
+        </Form.Group>
         {errors.password && <p>Password is required</p>}
         <button type="submit">Login</button>
-      </form>
+      </Form>
 
       <p>
         Don't have an account? <Link to="/register">Sign up</Link>
